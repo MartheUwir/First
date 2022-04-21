@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+// function displayRandom(){
+
+// var them= [{src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"}, 
+// {src="http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg"}, 
+// {src="http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"}
+// ]
+//  random = Math.floor(Math.random()*them.length)
+//  let div=document.getElementsByClassName("image")
+//  div.append(random).innerHTML= random
+
+
+// }
+// var pics = [
+//   {src: 'http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg', width: '240', height: '160'},
+//   {src: 'http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg', width: '320', height: '195'},
+//   {src: 'http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg', width: '500', height: '343'}
+// ]
+// function displayRandom() {
+//   var max = pics.length - 1; var min = 0;
+//   var index = Math.floor(Math.random()*(max-min+1))+min;
+//   var picElem = document.createElement('img');
+//   picElem.setAttribute('src', pics[index]['src']);
+//   picElem.setAttribute('width', pics[index]['width']); 
+//   picElem.setAttribute('height', pics[index]['height']);
+//   document.getElementById('output').innerHTML = "";
+//   document.getElementById('output').appendChild(picElem);
+// }
+function image() {
+var img = [{src: "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+width: "240",
+height: "160"},
+{src: "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+width: "320",
+height: "195" },
+{src: "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg",
+width: "500",
+height: "343"}];
+
+var arr = []
+for(i=0; i<img.length; i++){
+    arr[i] = new Image();
+arr[i].src = img[i].src
+arr[i].width= img[i].width
+arr[i].height = img[i].height
+}
+
+var random = arr[Math.floor(Math.random()*img.length)]
+var image= document.getElementsByTagName("img")
+for(let j=0; j<=image.length; j++){
+    image[0].parentNode.removeChild(image[0])
+}
+document.body.appendChild(random)
+}
+</script>
+<body>
+    <button onclick="image()">Display random image</button>
+    <div class="image"></div>
+    <img src="" alt="">
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count and display items of a drop down list-w3 resource</title>
+</head>
+<script>
+    function getColors(){
+        let colors= document.getElementsByTagName("option")
+        let count;
+    for( let i=0; i<= colors.length; i++){
+      count=i
+      window.alert(`The colors include ${colors[i].value}...`)
+    }
+    window.alert(`The number of the above colors is ${count}`)
+    }
+</script>
+<body>
+    <form>
+        Select your favorite color
+        <select id="colorSelect">
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="White">White</option>
+            <option value="Black">Black</option>
+        </select>
+        <input type="button" onclick="getColors()" value="Count and Output all items">
+    </form>
+</body>
+</html>
