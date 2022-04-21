@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+function palFinder(){
+let inputs= document.getElementById("phrase").value
+let list= document.getElementById("palindromes")
+let newList= document.createElement("li")
+let palindromes= document.getElementById("palindromes");
+let max= document.getElementById("max").value
+let min= document.getElementById("min").value
+let count=0;
+let number= document.getElementById("number")
+    var str1= inputs.toLowerCase().split("").reverse().join("");
+        var str= inputs.toLowerCase();
+       
+       if(str==str1 && min>inputs.length){
+     let  selected= document.getElementById("phrase")
+     selected.remove(selected.selectedIndex)
+     number.innerHTML= "The word you just entered is below the minimum length you specified! Refresh to try again."
+        }
+        else if(str==str1 && max<inputs.length){
+            let  selected= document.getElementById("phrase")
+            selected.remove(selected.selectedIndex)
+            number.innerHTML= "The word you just entered exceed the maximum length you specified! Refresh to try again."
+        }
+        else if(str==str1 && min<inputs.length && max>inputs.length){
+            count++
+            newList.setAttribute("id", "palindrome")
+            newList.append(inputs);
+            palindromes.appendChild(newList);
+            number.innerHTML= `${count} total palindrome(s)!`
+        }
+        else if(str==str1){
+            count++
+            newList.setAttribute("id", "palindrome")
+            newList.append(inputs);
+            palindromes.appendChild(newList);
+            number.innerHTML= `${count} total palindrome(s)!`
+        }
+        else{
+            number.innerHTML= "No Palindrome found!!!"
+        }
+}
+    </script>
+    <style>
+        #palindrome:nth-child(odd){
+              background-color:magenta;
+              background-image: url(images/th.jpeg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Palindrome Finder!</h1>
+    Phrase: <input type="text" id="phrase"><br><br>
+    length: <input type="number" name="" id="min">
+    to <input type="number" name="" id="max"><br><br>
+    <input type="button" onclick="palFinder()" id="button" value="Find Palindromes">
+    <ul id="palindromes">
+
+    </ul>
+    <span id="number"></span>
+   <h1> <img src="th.jpeg" width="130px" height="150px" alt="ok"><br> WOO WOO Congraturations !!!!</h1>
+</body>
+</html>
