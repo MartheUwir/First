@@ -1,0 +1,255 @@
+
+<html>
+    <head>
+        <title>Grades</title>
+        <script>
+// function compute(){
+//   let input1= document.getElementsByClassName("earned1")[0].value
+//   let input2= document.getElementsByClassName("earned2")[0].value
+//   let input3= document.getElementsByClassName("earned3")[0].value
+//   let max1= document.getElementsByClassName("max1")[0].value
+//   let max2= document.getElementsByClassName("max2")[0].value
+//   let max3= document.getElementsByClassName("max3")[0].value
+//   //let div= document.createElement("div")
+//   let div1= document.getElementById("resultarea").innerHTML
+//   let total_inputs=Number(input1+input2+input3)
+//   let total_max=Number(max1+max2+max3)
+//   let percentage = (total_inputs / total_max) * 100
+//   let percentnode = "";
+//   percentnode = document.createTextNode(String(percentage));
+
+// if(percentage>= 60){
+    
+// // div1.setAttribute("class", "pass")
+// document.getElementById("resultarea").appendChild(percentnode)
+// //div1.appendChild(div)
+// }else if(percentage<60){
+// // div1.setAttribute("class", "fail")
+// document.getElementById("resultarea").appendChild(percentnode)
+// //div1.appendChild(div)
+// }
+// }
+// function compute(){
+//    let input= document.getElementsByClassName("earned")
+//    let  max= document.getElementsByClassName("max")
+//    let div= document.getElementById("resultarea")
+//    let container= document.createElement("div")
+//    let space = document.createElement("br")
+//    let after_curve= document.createElement("div")
+//    let checkbox= document.getElementById("curve")
+//    let percentage=0
+//    let total_inputs= 0
+//    let total_max= 0
+//    let percentagenode= ""
+//    for(let i=0; i<input.length; i++){
+//         total_inputs += input[i].value;
+//         total_max += max[i].value;
+//    }
+//    percentage= (total_inputs/total_max)*100
+//    //percentagenode= document.createTextNode(String(percentage));
+//    if(percentage>=60){
+//        container.setAttribute("class", "pass");
+//        container.append(percentage);
+//        div.appendChild(container).innerHTML= percentage
+//        container.append(space)
+//    }
+//    else if(percentage<60){
+//     container.setAttribute("class", "fail");
+//        container.append(percentage);
+//        div.appendChild(container).innerHTML= percentage
+//        container.append(space)
+//    }
+//    function curve(){
+//       let curved_percentage= percentage+5
+//        while(checkbox[0].checked){
+//     if(percentage>=60){
+//        after_curve.setAttribute("class", "pass")
+//        after_curve.append(curved_percentage)
+//     div.appendChild(after_curve).innerHTML= curved_percentage
+//     after_curve.append(space)
+//     }
+//     else if(percentage<60){
+//         after_curve.setAttribute("class", "fail")
+//         after_curve.append(curved_percentage)
+//         div.appendChild(after_curve).innerHTML= curved_percentage
+//         after_curve.append(space)
+//        }
+//        }
+//    }
+// }
+
+// let earnedInp;
+// let earnedMarks,nbr,nbrInpts;
+// let earnedTotal=0;
+// let maxInp;let percentage;
+// let maxMarks;let maxTotal=0;
+// ​
+// let newElement
+// ​
+// ​
+// function addInput(){
+//     nbr=document.getElementById("numberr").value;
+// for(i=3;i<nbr;i++){
+// newInput1=document.createElement("input")
+// newInput2=document.createElement("input")
+// newElement=document.getElementById("assignments")
+// nwDiv=document.createElement("div")
+// nwDiv.append('HW'+(i+1),newInput1,'/',newInput2)
+// newElement.append(nwDiv)
+// }
+// }
+// function givePercentage(){
+//     earnedInp=document.getElementsByClassName("earned")
+//     for(i=0;i<earnedInp.length;i++){
+//         earnedMarks=parseInt(earnedInp[i].value)
+//         earnedTotal+=earnedMarks     
+//     }
+//     console.log(earnedTotal)
+//     maxInp=document.getElementsByClassName("max")
+//     for(i=0;i<maxInp.length;i++){
+//         maxMarks=parseInt(maxInp[i].value)
+//         maxTotal+=maxMarks        
+//     }
+//     console.log(maxTotal)
+// percentage=Math.floor((earnedTotal/maxTotal)*100)
+// console.log(percentage)
+// let parentElement=document.getElementById("resultsarea")
+// let newDiv=document.createElement("div")
+// ​
+// newDiv.innerHTML=percentage
+// if(percentage<60){   
+// newDiv.className="fail"
+// }else{
+// newDiv.className="pass"
+// }
+// parentElement.appendChild(newDiv)
+// }
+// var checkBoxElement
+// function myFunction(){
+// // checkBoxElement=document.getElementById('curve')
+// // if(checkBoxElement.checked=true){
+//     let parentElement=document.getElementById("resultsarea")
+//     let newDiv2=document.createElement("div")
+//     let newPercentage=percentage+5;
+//     newDiv2.innerHTML=newPercentage;
+//     if(newPercentage<60){
+//         newDiv2.className="fail"
+//     }else{
+//         newDiv2.className="pass"
+//     }
+//     parentElement.appendChild(newDiv2)
+// }
+
+// function removeValue(){
+//     document.getElementById("curve").checked=false
+//     let inputs=document.querySelectorAll("input")
+//     for(i=0;i<inputs.length;i++){
+//         inputs[i].value="";
+//     }
+// }
+   let earned,div,max,percentage;
+function compute(){
+   div = document.getElementById("resultsarea")
+   let newDiv= document.createElement("div")
+    earned =document.getElementsByClassName("earned")
+    max= document.getElementsByClassName("max")
+   let total_earned =0
+   let total_max=0;
+   for(let i=0; i<earned.length; i++){
+       total_earned +=Number(earned[i].value)
+       total_max += Number(max[i].value)
+   }
+   percentage= (total_earned/total_max)*100;
+   newDiv.innerHTML=percentage
+  if(percentage>=60){
+        newDiv.setAttribute("class", "pass")
+  }else if(percentage<60){      
+      newDiv.setAttribute("class", "fail")
+  }  
+  div.appendChild(newDiv).innerHTML= percentage
+  }
+  function curve(){
+    div = document.getElementById("resultsarea")
+    earned =document.getElementsByClassName("earned")
+    max= document.getElementsByClassName("max")
+   let total_earned =0
+   let total_max=0;
+   for(let i=0; i<earned.length; i++){
+       total_earned +=Number(earned[i].value)
+       total_max += Number(max[i].value)
+   }
+   percentage= (total_earned/total_max)*100;
+
+      let checkbox= document.getElementById("curve")
+      let curved_percentage= percentage+5
+    //   while(curved_percentage<=100){
+      if(checkbox. checked==true){
+        let newDiv2=document.createElement("div")
+       console.log("It works!")
+      newDiv2.innerHTML=curved_percentage
+      
+          if(curved_percentage>=60){
+              newDiv2.setAttribute("class","pass")
+          }else{
+              newDiv2.setAttribute("class","fail")
+          }
+          div.appendChild(newDiv2)
+        }
+     
+       
+    //   }
+      
+  
+}
+// function myFunction() {
+//             // Get the checkbox
+//             var checkBox = document.getElementById("myCheck");
+//             // Get the output text
+//             var text = document.getElementById("text");
+          
+//             // If the checkbox is checked, display the output text
+//             if (checkBox.checked == true){
+//               text.style.display = "block";
+//             } else {
+//               text.style.display = "none";
+//             }
+//           }
+        </script>
+        <style>
+            .pass{
+                background-color: #cfc;
+                font-weight: bold;
+                text-decoration: double;
+            }
+            .fail{
+                background-color: rgb(117, 13, 13);
+                font-style: italic;
+                text-decoration: dotted;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Grade Calculator</h1>
+        <div id="assignments">
+            <div class="hw">
+                HW1 <input type="text" class="earned" size="2">
+                /  <input type="text" class="max" size="2">
+            </div>
+            <div class="hw">
+                HW2 <input type="text" class="earned" size="2">
+                /    <input type="text" class="max" size="2">
+            </div>
+        </div>
+        <div class="hw">
+            HW3 <input type="text" class="earned" size="2">
+            /    <input type="text" class="max" size="2">
+        </div>
+        <div>
+            <label> <input type="checkbox" id="curve" onclick="curve()">Curve + 5</label>
+        </div>
+        <div id="resultsarea">
+            <button id="compute" onclick="compute()">Compute!</button>
+            <button id="clear"> Clear</button>
+        </div>
+    </body>
+    </html
